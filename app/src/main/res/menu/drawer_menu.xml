@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item
+        android:id="@+id/heart"
+        android:icon="@drawable/heart_foreground"
+        android:title="@string/drawer1">
+    </item>
+    <item
+        android:id="@+id/strength"
+        android:icon="@drawable/strength_foreground"
+        android:title="@string/drawer2">
+    </item>
+    <item
+        android:id="@+id/hearing"
+        android:icon="@drawable/hearing_foreground"
+        android:title="@string/drawer3">
+    </item>
+
+</menu>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TAREA03A</string>
+
+    <string name="user">Enter your user</string>
+    <string name="password">Enter your password</string>
+    <string name="forgotten">Did you forgot your password?</string>
+
+    <string name="btnAccept">Accept</string>
+    <string name="btnCancel">Cancel</string>
+
+
+    <string name="txtIMC">Ingresa los campos para conocer tu indice de masas corporal</string>
+    <string name="txtEdad">Ingresa tu edad</string>
+    <string name="txtPeso">Ingresa tu peso</string>
+    <string name="txtAltura">Ingresa tu altura</string>
+    <string name="txtHombre">Soy hombre</string>
+    <string name="txtMujer">Soy mujer</string>
+
+    <string name="txtRojo">Red 0 – 255:  </string>
+    <string name="txtVerde">Green 0 – 255:  </string>
+    <string name="txtAzul">Blue 0 – 255:  </string>
+
+    <string name="menu1">Change colors</string>
+    <string name="menu2">Change genre</string>
+    <string name="menu3">Change user</string>
+    <string name="menu4">Change options</string>
+
+
+    <string name="drawerHeader">Select new checkups</string>
+    <string name="drawer1">Check your heart rate</string>
+    <string name="drawer2">Check your body strength</string>
+    <string name="drawer3">Check your hearing </string>
+
+
+</resources>

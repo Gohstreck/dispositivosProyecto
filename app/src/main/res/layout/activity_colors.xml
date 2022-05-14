@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ColorsActivity">
+
+    <TextView
+        android:id="@+id/txtRojoActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/skRed"
+        app:layout_constraintStart_toStartOf="@+id/skRed"
+        app:layout_constraintTop_toBottomOf="@+id/skRed" />
+
+    <SeekBar
+        android:id="@+id/skBlue"
+        android:layout_width="263dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:max="255"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skGreen"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/txtAzul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/txtAzul"
+        app:layout_constraintBottom_toTopOf="@+id/skBlue"
+        app:layout_constraintStart_toStartOf="@+id/skBlue" />
+
+    <TextView
+        android:id="@+id/txtVerde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/txtVerde"
+        app:layout_constraintBottom_toTopOf="@+id/skGreen"
+        app:layout_constraintStart_toStartOf="@+id/skGreen" />
+
+    <SeekBar
+        android:id="@+id/skGreen"
+        android:layout_width="263dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:max="255"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skRed"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <SeekBar
+        android:id="@+id/skRed"
+        android:layout_width="263dp"
+        android:layout_height="32dp"
+        android:max="255"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <TextView
+        android:id="@+id/txtRojo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtRojo"
+        app:layout_constraintBottom_toTopOf="@+id/skRed"
+        app:layout_constraintStart_toStartOf="@+id/skRed" />
+
+    <LinearLayout
+        android:layout_width="255dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skBlue">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:text="@string/btnCancel" />
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:text="@string/btnAccept" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/redAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/skRed"
+        app:layout_constraintStart_toEndOf="@+id/txtRojo" />
+
+    <TextView
+        android:id="@+id/greenAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/skGreen"
+        app:layout_constraintStart_toEndOf="@+id/txtVerde" />
+
+    <TextView
+        android:id="@+id/blueAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/skBlue"
+        app:layout_constraintStart_toEndOf="@+id/txtAzul" />
+</androidx.constraintlayout.widget.ConstraintLayout>

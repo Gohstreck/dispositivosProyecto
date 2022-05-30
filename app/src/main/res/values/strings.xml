@@ -4,17 +4,22 @@
     <string name="user">Enter your user</string>
     <string name="password">Enter your password</string>
     <string name="forgotten">Did you forgot your password?</string>
-
+    <string name="lastIMC">Your last IMC: </string>
+    <string name="lastHR">Your last HR: </string>
     <string name="btnAccept">Accept</string>
     <string name="btnCancel">Cancel</string>
+    <string name="home">Home</string>
+    <string name="userName">Guest</string>
 
+    <string name="txtIMC">Fill the form to check your imc</string>
+    <string name="txtEdad">Age</string>
+    <string name="txtPeso">Weight (in kilograms)</string>
+    <string name="txtAltura">Height (in meters)</string>
+    <string name="txtHombre">I\'m a male</string>
+    <string name="txtMujer">I\'m a female</string>
+    <string name="txtCalc">Calculate</string>
+    <string name="imc">Your result is: </string>
 
-    <string name="txtIMC">Ingresa los campos para conocer tu indice de masas corporal</string>
-    <string name="txtEdad">Ingresa tu edad</string>
-    <string name="txtPeso">Ingresa tu peso</string>
-    <string name="txtAltura">Ingresa tu altura</string>
-    <string name="txtHombre">Soy hombre</string>
-    <string name="txtMujer">Soy mujer</string>
 
     <string name="txtRojo">Red 0 – 255:  </string>
     <string name="txtVerde">Green 0 – 255:  </string>
@@ -26,6 +31,8 @@
     <string name="menu4">Change options</string>
 
 
+    <string name="heartPres">Please fill the form to check how good your heart rate is</string>
+    <string name="heartPulses">Number of pulses in 15 seconds</string>
     <string name="drawerHeader">Select new checkups</string>
     <string name="drawer1">Check your heart rate</string>
     <string name="drawer2">Check your body strength</string>

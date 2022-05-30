@@ -38,7 +38,10 @@
                 android:id="@+id/userText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/user" />
+                android:hint="@string/user"
+                android:inputType="text"
+                android:nextFocusDown="@id/passwordText"
+                android:textColorHint="#D55C5C" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,7 +58,11 @@
                 android:id="@+id/passwordText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password" />
+                android:hint="@string/password"
+                android:textColorHint="#616161"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -74,10 +81,11 @@
 
             <Button
                 android:id="@+id/btnCancelar"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
 
+                android:layout_margin="2dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
@@ -85,10 +93,11 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/btnCancel"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnAceptar"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -98,7 +107,7 @@
                 android:layout_marginBottom="2dp"
                 android:layout_weight="1"
                 android:text="@string/btnAccept"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -110,12 +119,32 @@
             android:layout_marginTop="24dp"
             android:text="@string/forgotten"
             android:textAlignment="center"
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+        <TextView
+            android:id="@+id/txtLastIMC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastIMC"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout" />
+
+        <TextView
+            android:id="@+id/txtLastHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastHR"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/txtLastIMC"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

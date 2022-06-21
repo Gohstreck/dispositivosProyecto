@@ -6,11 +6,13 @@
     <string name="forgotten">Did you forgot your password?</string>
     <string name="lastIMC">Your last IMC: </string>
     <string name="lastHR">Your last HR: </string>
+    <string name="login">Log in</string>
+    <string name="register">Register</string>
     <string name="btnAccept">Accept</string>
     <string name="btnCancel">Cancel</string>
     <string name="home">Home</string>
-    <string name="userName">Guest</string>
 
+    <string name="mainText">Your lasts tests: </string>
     <string name="txtIMC">Fill the form to check your imc</string>
     <string name="txtEdad">Age</string>
     <string name="txtPeso">Weight (in kilograms)</string>
@@ -20,14 +22,21 @@
     <string name="txtCalc">Calculate</string>
     <string name="imc">Your result is: </string>
 
+    <string name="nameUser">User name: </string>
+    <string name="passwordUser">Password: </string>
+    <string name="genreUser">Genre : </string>
+    <string name="squatsUser">No. squats : </string>
+    <string name="pushUpsUser">No. push ups : </string>
+    <string name="crunchesUser">No. crunches : </string>
+    <string name="imcUser">Your imc : </string>
+    <string name="hearRateUser">Your heart rate : </string>
 
     <string name="txtRojo">Red 0 – 255:  </string>
     <string name="txtVerde">Green 0 – 255:  </string>
     <string name="txtAzul">Blue 0 – 255:  </string>
 
     <string name="menu1">Change colors</string>
-    <string name="menu2">Change genre</string>
-    <string name="menu3">Change user</string>
+    <string name="menu3">Edit user</string>
     <string name="menu4">Change options</string>
 
 
@@ -36,7 +45,7 @@
     <string name="drawerHeader">Select new checkups</string>
     <string name="drawer1">Check your heart rate</string>
     <string name="drawer2">Check your body strength</string>
-    <string name="drawer3">Check your hearing </string>
+    <string name="drawer3">Check your IMC </string>
 
 
 </resources>

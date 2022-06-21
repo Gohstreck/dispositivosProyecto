@@ -14,17 +14,20 @@ import android.widget.TextView;
 
 
 public class HeartRate extends AppCompatActivity {
-    String user, hrRes;
+    String hrRes;
     int puls, hr;
+    User user;
+    DBHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heart_rate);
 
         Bundle extra = getIntent().getExtras();
-        user = extra.getString("USER");
+        user = extra.getParcelable("USER");
+
         TextView userHR = (TextView) findViewById(R.id.userHR);
-        userHR.setText(user);
+        userHR.setText(user.getHearRate());
 
         EditText heartPuls = (EditText) findViewById(R.id.txtHeartPulses);
         TextView heartRes = (TextView) findViewById(R.id.heartRes);
@@ -42,6 +45,10 @@ public class HeartRate extends AppCompatActivity {
                 }else{
                     hrRes = "Bad. Try again or go to a medic.";
                 }
+                user.setHearRate(hr);
+
+                db.updateUser(user.getName(), user.getGenre(), user.getSquats(), user.getPushUps(),
+                        user.getCrunches(), user.getImc(), user.getHearRate());
 
                 heartRes.setText(hrRes);
 
@@ -57,8 +64,8 @@ public class HeartRate extends AppCompatActivity {
         ImageButton home = (ImageButton) findViewById(R.id.btnHome2);
         home.setOnClickListener(view -> {
             Intent i = new Intent(HeartRate.this, MainActivity.class);
-            i.putExtra("hrRes", hrRes);
-            i.putExtra("hr", hr);
+            i.putExtra("USER",user);
+
             startActivity(i);
         });
     }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <item
+        android:id="@+id/imc"
+        android:icon="@drawable/hearing_foreground"
+        android:title="@string/drawer3">
+    </item>
 
     <item
         android:id="@+id/heart"
@@ -14,10 +19,6 @@
         android:icon="@drawable/strength_foreground"
         android:title="@string/drawer2">
     </item>
-    <item
-        android:id="@+id/hearing"
-        android:icon="@drawable/hearing_foreground"
-        android:title="@string/drawer3">
-    </item>
+
 
 </menu>

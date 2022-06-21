@@ -98,7 +98,7 @@
             android:text="@string/btnCancel" />
 
         <Button
-            android:id="@+id/btnAceptar"
+            android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"

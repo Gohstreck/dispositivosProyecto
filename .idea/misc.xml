@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2845" />
+        <entry key="app/src/main/res/drawable/gradient.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/hearing_foreground.xml" value="0.19" />
         <entry key="app/src/main/res/drawable/space_background.xml" value="0.2845" />
         <entry key="app/src/main/res/layout/activity_colors.xml" value="0.32019927536231885" />
         <entry key="app/src/main/res/layout/activity_heart_rate.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_imc.xml" value="0.32019927536231885" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.27911857292759706" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_strength.xml" value="0.32019927536231885" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.375" />
         <entry key="app/src/main/res/layout/drawer.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/drawer_header.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/drawer_layout.xml" value="0.18177083333333333" />

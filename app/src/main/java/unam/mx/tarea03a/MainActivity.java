@@ -1,93 +1,73 @@
 package unam.mx.tarea03a;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.InputDeviceCompat;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
-import android.view.inputmethod.InputMethodManager;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
 
-import org.w3c.dom.Text;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
     DrawerLayout drawer;
-    String imcRes, hrRes;
-    float imc;
-    int hr;
+
+    User user;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
-            Bundle extras = getIntent().getExtras();
-            imcRes = extras.getString("imcRes", "");
-            imc = extras.getFloat("imc");
-            TextView lastIMC = (TextView) findViewById(R.id.txtLastIMC);
-            lastIMC.setText("Last IMC: " + imc + ". " + imcRes);
-            hrRes = extras.getString("hrRes", "");
-            hr = extras.getInt("hr");
-            TextView lastHR = (TextView) findViewById(R.id.txtLastHeart);
-            lastHR.setText("Last HR: " + hr + ". " + hrRes);
-
-        } catch (NullPointerException ignored){
-            TextView lastIMC = (TextView) findViewById(R.id.txtLastIMC);
-            lastIMC.setText("No prior IMC");
-
-            TextView lastHR= (TextView) findViewById(R.id.txtLastHeart);
-            lastHR.setText("No prior Heart Rate");
-        }
 
 
+        Bundle extras = getIntent().getExtras();
 
-        Button btnAccept = findViewById(R.id.btnAceptar);
-        Button btnCancel = findViewById(R.id.btnCancelar);
-        EditText user = findViewById(R.id.userText);
-        EditText password = findViewById(R.id.passwordText);
+        user = extras.getParcelable("USER");
 
+
+        TextView txtName = findViewById(R.id.txtNameMain2);
+        TextView txtSquats = findViewById(R.id.txtSquatsMain2);
+        TextView txtPushUps = findViewById(R.id.txtPushUpsMain);
+        TextView txtCrunches = findViewById(R.id.txtCrunchesMain);
+        TextView txtImc = findViewById(R.id.txtImcMain);
+        TextView txtHR = findViewById(R.id.txtHearRateMain);
+
+        Button btnIMC = findViewById(R.id.btnIMC);
+        Button btnHR = findViewById(R.id.btnHR);
+        Button btnSTR = findViewById(R.id.btnSTR);
+
+        txtName.setText(user.getName());
+        txtSquats.setText(String.valueOf(user.getSquats()));
+        txtPushUps.setText(String.valueOf(user.getPushUps()));
+        txtCrunches.setText(String.valueOf(user.getCrunches()));
+        txtImc.setText(String.valueOf(user.getImc()));
+        txtHR.setText(String.valueOf(user.getHearRate()));
 
         Toolbar toolbar =  findViewById(R.id.toolbar);
         drawer = findViewById(R.id.drawer);
         NavigationView navigationView = findViewById(R.id.navigation_view);
-
-        btnAccept.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ImcActivity.class);
-                intent.putExtra("USER", user.getText().toString());
-                intent.putExtra("PASSWORD", password.getText().toString());
-                startActivity(intent);
-
-            }
-        });
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finishAffinity();
-            }
-        });
-
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.btnAccept, R.string.btnCancel);
@@ -97,32 +77,66 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        btnIMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("NAV", "PRESSED IMC");
+                Intent k = new Intent( MainActivity.this, ImcActivity.class);
+                k.putExtra("USER", user);
+                startActivity(k);
+            }
+        });
+
+        btnSTR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("NAV", "PRESSED STRENGTH");
+
+                Intent i = new Intent( MainActivity.this, Strength.class);
+                i.putExtra("USER", user);
+                startActivity(i);
+            }
+        });
+
+        btnHR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("NAV", "PRESSED HEART");
+                Intent i = new Intent(MainActivity.this, HeartRate.class);
+                i.putExtra("USER", user);
+                startActivity(i);
+            }
+        });
+
+
     }
 
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        Log.d("TAco",id+"");
-        switch (id){
-            case R.id.heart:
-                EditText user = findViewById(R.id.userText);
-                Intent i = new Intent(MainActivity.this, HeartRate.class);
-                i.putExtra("USER", user.getText().toString());
-                startActivity(i);
 
-                break;
-            case R.id.strength:
-                Toast.makeText(this,R.string.drawer2, Toast.LENGTH_SHORT).show();
-                Log.d("Drawer", "Input:  " + getString(R.string.drawer2));
-                break;
-            case R.id.hearing:
-                Toast.makeText(this,R.string.drawer3, Toast.LENGTH_SHORT).show();
-                Log.d("Drawer", "Input:  " + getString(R.string.drawer3));
-                break;
+        if (id == R.id.heart){
 
+            Log.d("NAV", "PRESSED HEART");
+            Intent i = new Intent(MainActivity.this, HeartRate.class);
+            i.putExtra("USER", user);
+            startActivity(i);
         }
+        if (id == R.id.strength){
+            Log.d("NAV", "PRESSED STRENGTH");
+
+            Intent i = new Intent(MainActivity.this, Strength.class);
+            i.putExtra("USER", user);
+            startActivity(i);
+        }
+        if (id == R.id.imc){
+            Log.d("NAV", "PRESSED IMC");
+            Intent k = new Intent(MainActivity.this, ImcActivity.class);
+            k.putExtra("USER", user);
+            startActivity(k);
+        }
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -148,16 +162,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.colorMenu:
-                Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
-                Log.d("MENU", "COLOR MENU clicked");
-                startActivity(intent);
-                return true;
-            case R.id.genreMenu:
-                Log.d("MENU", "GENRE MENU clicked");
-                return true;
+
             case R.id.userMenu:
-                Log.d("MENU", "USER MENU clicked");
+                Intent intent = new Intent(MainActivity.this,  UserActivity.class);
+                intent.putExtra("USER", user);
+                startActivity(intent);
                 break;
             case R.id.optionMenu:
                 Log.d("MENU", "OPTION MENU clicked");
